@@ -1,33 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+body {
+    font-family: 'Poppins', serif;
+    background: #f1f1f1 url('concrete_seamless.png') repeat;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+@keyframes logoAnimation {
+    from {
+        width: 25px;
+        opacity: 0;
+    }
+    to {
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+.logo {
+    animation: logoAnimation 5s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo {
+        animation: none;
+    }
+}
+
+.nav_links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card > header {
+    background: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
 .card {
-  flex-basis: 450px;
+    display: flex;
+    flex: 1 1 450px;
 }
 
 .pricing {
-  display: flex;
-  flex-wrap: row wrap;
-  justify-content: center;
-}
-
-@media screen and (min-width: 900px) {
-  header{
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-  }
-  .nav_links{
-    flex-direction: row;
-  }
-  .card{
-    flex-basis: 275px;
-  }
-  .pricing{
     align-items: center;
-  }
+    justify-content: center;
 }
 
-@media all and (prefers-reduced-motion: reduce) {
+.gallery img {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+@media (min-width: 900px) {
+    header {
+        justify-content: space-between;
+    }
+    .pricing, .card {
+        flex: 1 1 275px;
+    }
 }
 
 @media print {
-}
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: none;
+    }
 
+    .nav_links {
+    }
+
+    .pricing {
+        align-items: flex-end;
+    }
+
+    .card {
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+
+    .gallery {
+        display: none;
+    }
+
+}
